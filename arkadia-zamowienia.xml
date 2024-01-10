@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage />
+	<TimerPackage />
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>zamowienia_list</name>
+			<script>scripts.zamowienia:cmdList(matches[2])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^/zamowienia_list(?:$| (aktywne)$)</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>zamowienia_zamowienia</name>
+			<script>scripts.zamowienia:cmdZamowienia()</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^/zamowienia$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>zamowienia_miasto</name>
+			<script>scripts.zamowienia:cmdMiasto(matches[2])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^/zamowienia_miasto(?:$| (.+)$)</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>zamowienia_sprawdz</name>
+			<script>scripts.zamowienia:cmdSprawdz(matches[2])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^/zamowienia_sprawdz (.+)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>zamowienia_licznik</name>
+			<script>scripts.zamowienia:cmdLicznik(matches[2])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^/zamowienia_licznik(?:$| (reset|szczegoly)$)</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>zamowienia_raport</name>
+			<script>scripts.zamowienia:cmdRaport(matches[2])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^/zamowienia_raport (\d+)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>zamowienia_miesiac</name>
+			<script>scripts.zamowienia:cmdRaport(matches[2])</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^/zamowienia_miesiac (.+) (.+)$</regex>
+		</Alias>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage />
+	<KeyPackage />
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
+</MudletPackage>
