@@ -165,6 +165,9 @@ function scripts.zamowienia:getOrders(active)
     end
 
     table.sort(res, function(a,b)
+        if not a.town or not b.town then
+            return 0
+        end
         return a.town < b.town
     end)
 

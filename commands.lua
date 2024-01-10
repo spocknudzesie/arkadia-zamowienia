@@ -4,10 +4,9 @@ function scripts.zamowienia:cmdZamowienia()
     .. "/zamowienia_list [aktywne] - lista zamowien\n"
     .. "/zamowienia_miasto <miasto> - ustawia miasto dla aktualnego zamowienia\n"
     .. "/zamowienia_sprawdz <short> - sprawdza nagrode za podany przedmiot\n"
-    .. "/zamowienia_raport <prowizja> - generuje raport ze zrealizowanch zamowien z uwzglednieniem podanej prowizji\n"
-    .. "/zamowienia_licznik [reset] - wyswietla dotychczasowy zysk z zamowien lub resetuje go\n\n")
+    .. "/zamowienia_raport [prowizja] - generuje raport ze zrealizowanch zamowien z uwzglednieniem podanej prowizji\n"
+    .. "/zamowienia_licznik [reset|szczegoly] - wyswietla dotychczasowy zysk (z ew. edytowalnymi szczegolami) z zamowien lub resetuje go\n\n")
     
-    scripts.zamowienia:cmdLicznik(nil)    
 end
 
 
@@ -114,7 +113,7 @@ function scripts.zamowienia:cmdRaport(arg)
         m = string.gsub(m, ',', '')
         m = string.gsub(m, '_', '')
         m = string.gsub(m, '<%w+>', '')
-        echo(m)
+        echo(m .. "\n")
     end
 end
 
