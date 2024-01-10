@@ -10,7 +10,7 @@ function scripts.zamowienia:getDeliveries(timeFrom, timeTo, sum)
     else
         q = string.format("SELECT * FROM deliveries WHERE timestamp >= %s AND timestamp <= %s AND character='%s'", timeFrom, timeTo, gmcp.char.info.name)
     end
-    print(q)
+    -- print(q)
     return db:execute(self.database.name, q)
 end
 

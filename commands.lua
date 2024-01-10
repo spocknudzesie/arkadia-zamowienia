@@ -4,7 +4,10 @@ function scripts.zamowienia:cmdZamowienia()
     .. "/zamowienia_list [aktywne] - lista zamowien\n"
     .. "/zamowienia_miasto <miasto> - ustawia miasto dla aktualnego zamowienia\n"
     .. "/zamowienia_sprawdz <short> - sprawdza nagrode za podany przedmiot\n"
+    .. "/zamowienia_raport <prowizja> - generuje raport ze zrealizowanch zamowien z uwzglednieniem podanej prowizji\n"
     .. "/zamowienia_licznik [reset] - wyswietla dotychczasowy zysk z zamowien lub resetuje go\n\n")
+    
+    scripts.zamowienia:cmdLicznik(nil)    
 end
 
 
@@ -28,7 +31,7 @@ function scripts.zamowienia:cmdList(arg)
         echo(self:orderToText(order) .. "\n")
     end
 
-    scripts.zamowienia:cmdLicznik(nil)
+
 end
 
 
@@ -111,7 +114,7 @@ function scripts.zamowienia:cmdRaport(arg)
         m = string.gsub(m, ',', '')
         m = string.gsub(m, '_', '')
         m = string.gsub(m, '<%w+>', '')
-        send(m)
+        echo(m)
     end
 end
 
@@ -119,7 +122,7 @@ end
 function scripts.zamowienia:cmdMonth(startDate, endDate, details)
     details = details or false
     local data = self:getDeliveriesInRange(startDate, endDate, true)[1].total_reward
-    print(string.format("Zrealizowane zamowienia za okres %s - %s GM:", startDate, endDate))
+    print(string.format("Zrealizowane zamowienia dla postaci '%s' za okres %s - %s:", gmcp.char.info.name, startDate, endDate))
     hecho(string.format("Laczny zysk: %s\n", scripts.money:hCopperToDesc(data, true)))
 end
 
